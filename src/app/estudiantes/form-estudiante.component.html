@@ -1,0 +1,44 @@
+<div class="container">
+
+    <div class="card-body">
+        <h5 class="card-title" align="center">{{titulo}}</h5>
+        <br>
+        <form>
+            <div class="form-group row" align="center">
+                <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="nombre" [(ngModel)]="estudiante.nombre">
+                </div>
+            </div>
+            <br>
+            <div class="form-group row" align="center">
+                <label for="apellido" class="col-form-label col-sm-2">Apellido</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="apellido" [(ngModel)]="estudiante.apellido">
+                </div>
+            </div>
+            <br>
+            <div class="form-group row" align="center">
+                <label for="email" class="col-form-label col-sm-2">Email</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="email" [(ngModel)]="estudiante.email">
+                </div>
+            </div>
+            <br>
+            <div class="form-group row" align="center">
+                <label for="nota" class="col-form-label col-sm-2">Nota</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="nota" [(ngModel)]="estudiante.nota">
+                </div>
+            </div>
+            <br>
+            <button type="button" class="btn btn-success" role="button" (click)="create()" *ngIf="!estudiante.id else elseBlock">Registrar</button>
+
+            <ng-template #elseBlock> 
+            <button type="button" class="btn btn-success" role="button" (click)="update()">Actualizar</button>
+            </ng-template>
+        </form>
+    </div>
+</div>
+
+

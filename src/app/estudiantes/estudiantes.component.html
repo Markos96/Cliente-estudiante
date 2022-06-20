@@ -1,0 +1,37 @@
+<h1 align="center">{{ titulo }}</h1>
+<br>
+
+
+
+<div class="container">
+ 
+  <td><button type="button" name="button" class="btn btn-success" [routerLink]="['/estudiantes/form/']"><i class="bi bi-person-plus"></i></button></td>
+ 
+<table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Email</th>
+        <th scope="col">Nota</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let estudiante of estudiantes">
+        <th scope="row">{{estudiante.id}}</th>
+        <td>{{estudiante.nombre}}</td>
+        <td>{{estudiante.apellido}}</td>
+        <td>{{estudiante.email}}</td>
+        <td>{{estudiante.nota}}</td>
+        <div class="co">
+         
+          <td><button type="button" id="buttonEdit" class="btn btn-primary" [routerLink]="['/estudiantes/form', estudiante.id]"><i class="bi bi-pencil-fill"></i></button></td>
+          <td><button class="btn btn-danger" (click)="delete(estudiante)"><i class="bi bi-x-circle"></i></button></td>
+        </div>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
